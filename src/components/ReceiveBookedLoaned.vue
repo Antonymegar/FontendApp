@@ -29,8 +29,8 @@ export default {
     async receiveBookFromUser() {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1/api/book_loan/receive_back/${this.loanId}`, {
-          method: 'PUT',
+        const response = await fetch(`http://127.0.0.1/api/books_loan/return/${this.loanId}`, {
+          method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
