@@ -5,14 +5,14 @@
     <form @submit.prevent="extendBookLoan" class="extend-loan-form">
       <div class="form-group">
         <label for="loanId">Loan ID:</label>
-        <!-- Display the loan ID from the route parameter -->
         <input type="text" id="loanId" v-model="loanId" required class="input-field" disabled />
       </div>
 
       <div class="form-group">
-        <label for="extendDate">Extend Date:</label>
-        <input type="date" id="extendDate" v-model="extendDate"  required class="input-field" :min="minDueDate" />
-      </div>
+  <label for="extendDate">Extend Date:</label>
+  <input type="date" id="extendDate" v-model="extendDate" required class="input-field" :min="minDueDate" />
+     </div>
+
 
       <button type="submit" class="extend-loan-button">Extend Loan</button>
     </form>
@@ -26,7 +26,7 @@
 export default {
   data() {
     return {
-      loanId: this.$route.params.id, // Use the loan ID from the route parameter
+      loanId: this.$route.params.id,
       extendDate: '',
       message: '',
       error: '',
@@ -51,7 +51,7 @@ export default {
             'Authorization': `Bearer ${token}`,
           },
           body: JSON.stringify({
-            extend_date: this.extendDate,
+            extension_date: this.extendDate,
           }),
         });
 

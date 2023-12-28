@@ -60,7 +60,6 @@ export default {
     },
 
     sendLoanIdToBackend() {
-      // Send the loan ID to the backend for further processing
       const token = localStorage.getItem('token');
       fetch(`http://127.0.0.1:8000/api/book_loan/approve/${this.loanDetails.id}`, {
         method: 'PUT',
@@ -71,7 +70,6 @@ export default {
       })
         .then(response => response.json())
         .then(data => {
-          // Handle the response from the backend if needed
           console.log('Loan ID sent to backend:', data);
           this.responseMessage = data.message || 'Loan approved successfully';
         })

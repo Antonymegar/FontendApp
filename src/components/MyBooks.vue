@@ -29,10 +29,9 @@ export default {
     };
   },
   mounted() {
-    // Fetch the logged-in user ID from localStorage or your authentication system
+    
     const userId = localStorage.getItem('userId');
 
-    // Fetch loaned books for the logged-in user
     this.fetchLoanedBooks(userId);
   },
   methods: {
@@ -73,7 +72,7 @@ export default {
 }
 
 .book-item {
-  flex: 0 0 calc(25% - 20px); /* Adjust the width as needed */
+  flex: 0 0 calc(25% - 20px); 
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 20px;
